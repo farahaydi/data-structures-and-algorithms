@@ -24,6 +24,7 @@ public class Class02 {
     public static int[] insertShiftArray(int n, int list[]) {
         int middleIndex = list.length / 2;
         int[] result = new int[list.length + 1];
+
         if (list.length % 2 == 0) {
             for (int i = 0; i < middleIndex; i++) {
                 result[i] = list[i];
@@ -33,6 +34,7 @@ public class Class02 {
                 result[i] = list[i - 1];
             }
         } else {
+            middleIndex = (int) Math.ceil(list.length / 2.0);
             for (int i = 0; i < middleIndex; i++) {
                 result[i] = list[i];
             }
@@ -44,4 +46,10 @@ public class Class02 {
 
         return result;
     }
+
+
+
+
+
+
 }

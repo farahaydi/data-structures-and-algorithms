@@ -1,7 +1,7 @@
 # Code Challenge: Class 02
 in this challenge we just deifined a function called **insertShiftArray** which takes an array and number as an argument and return an array with the new value added at the middle index.
 ## Whiteboard Process
-[Whiteboard](Screenshot%20(407).png)
+[Whiteboard](./Screenshot%20(395).png)
 
 ## Approach & Efficiency
 Approach: The code defines an ArrayList<Integer> and adds initial elements [10, 20, 30]. The insertShiftArray method takes an integer and the list, calculates the middle index, inserts the integer there, and returns the modified list.
