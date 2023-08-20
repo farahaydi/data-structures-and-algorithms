@@ -43,4 +43,64 @@ public class Linkylist {
         }
     }
 
+    public void append(int value) {
+        Node heady = head;
+        while (heady != null) {
+            if (heady.nextValue == null) {
+                break;
+            }
+            heady = heady.nextValue;
+        }
+
+        Node newVaule = new Node(value);
+        if (heady == null) {
+            head = newVaule;
+        } else {
+            heady.nextValue = newVaule;
+        }
+    }
+
+    public void insertBefore(int value, int newValue) {
+        if (head == null) {
+            return;
+        }
+
+        if (head.value == value) {
+            Node newNode = new Node(newValue);
+            newNode.nextValue = head;
+            head = newNode;
+            return;
+        }
+
+        Node heady = head;
+        while (heady.nextValue != null) {
+            if (heady.nextValue.value == value) {
+                Node newNode = new Node(newValue);
+                newNode.nextValue = heady.nextValue;
+                heady.nextValue = newNode;
+                return;
+            }
+            heady = heady.nextValue;
+        }
+    }
+
+    public void insertAfter(int value, int newValue) {
+        if (head == null) {
+            return;
+        }
+        Node heady = head;
+        while (heady != null) {
+            if (heady.value == value) {
+                Node newNode = new Node(newValue);
+                newNode.nextValue = heady.nextValue;
+                heady.nextValue = newNode;
+                return;
+            }
+            heady = heady.nextValue;
+        }
+    }
+
 }
+
+
+

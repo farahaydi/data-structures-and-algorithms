@@ -3,6 +3,8 @@
  */
 package linklist;
 
+import java.util.LinkedList;
+
 public class App {
     public static void main(String[] args) {
         Linkylist myList = new Linkylist();
@@ -10,6 +12,15 @@ public class App {
         myList.insert(3);
         myList.insert(2);
         myList.insert(1);
+        myList.insertBefore(2,44);
+        myList.insertAfter(2,44);
+        myList.append(55);
         System.out.println(myList.to_string());
-        System.out.println(myList.includes(2));    }
+        System.out.println(myList.includes(2));
+// LinkedList<Integer> test = new LinkedList<>();
+//        test.add(1);
+//        test.add(0);
+//
+//        System.out.println(test);
+   }
 }
