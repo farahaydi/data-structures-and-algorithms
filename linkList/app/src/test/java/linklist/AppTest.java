@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
     @Test
     public void testInsert() {
-    Linkylist testlink =new Linkylist();
-    testlink.insert(1);
-    testlink.insert(0);
-    assertEquals("{0} -> {1} -> NULL", testlink.to_string());
+        Linkylist testLink = new Linkylist();
+        testLink.insert(1);
+        testLink.insert(0);
+        assertEquals("{0} -> {1} -> NULL", testLink.to_string());
     }
     @Test
     public void testInclude()
@@ -21,7 +21,50 @@ class AppTest {
         Linkylist testlink =new Linkylist();
         testlink.insert(1);
         testlink.insert(0);
-        testlink.includes(1);
-        assertEquals(true,true);
+        assertEquals(true,testlink.includes(1));
+    }
+
+    @Test
+    public void testEmptyList() {
+        Linkylist testLink = new Linkylist();
+        assertNull(testLink.head);
+    }
+    @Test
+    public void testHead()
+    {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(44);
+//        System.out.println(testLink.head.value);
+        assertNotNull(testLink.head);
+        assertEquals(44, testLink.head.value);
+    }
+    @Test
+    public void testInsertMultipleNodes() {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        assertEquals("{0} -> {1} -> {2} -> NULL", testLink.to_string());
+    }
+    @Test
+    public void testNotInclude()
+    {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        assertEquals(false, testLink.includes(12));
+    }
+    @Test
+    public void testAllValues() {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        assertEquals("{0} -> {1} -> {2} -> NULL", testLink.to_string());
     }
 }
+
+//1. Write tests to prove the following functionality:
+// that exists Will return false when searching for a value in the linked list that
+// does not exist Can properly return a collection of all the values that exist in the linked list
