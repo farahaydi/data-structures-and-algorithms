@@ -63,7 +63,121 @@ class AppTest {
         testLink.insert(0);
         assertEquals("{0} -> {1} -> {2} -> NULL", testLink.to_string());
     }
+
+    //Can successfully add a node to the end of the linked list
+    @Test
+    public void testAppend()
+    {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        testLink.append(44);
+        assertEquals("{0} -> {1} -> {2} -> {44} -> NULL", testLink.to_string());
+    }
+    //Can successfully add multiple nodes to the end of a linked list
+    @Test
+    public void testAppendMultiple()
+    {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        testLink.append(44);
+        testLink.append(55);
+        testLink.append(66);
+
+        assertEquals("{0} -> {1} -> {2} -> {44} -> {55} -> {66} -> NULL", testLink.to_string());
+    }
+    //Can successfully insert a node before a node located i the middle of a linked list
+    @Test
+    public void testInsertBeforeMid() {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(3);
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        Node hed =testLink.head;
+        int count=0;
+        while (hed!=null)
+        {
+            hed=hed.nextValue;
+            count++;
+        }
+//        System.out.println(count/2);
+        int middleIndex = count / 2;
+
+        Node currentNode = testLink.head;
+        for (int i = 0; i < middleIndex; i++) {
+            currentNode = currentNode.nextValue;
+        }
+        testLink.insertBefore(currentNode.value, 99);
+        assertEquals("{0} -> {1} -> {99} -> {2} -> {3} -> NULL", testLink.to_string());
+    }
+    @Test
+    public void testInsertBeforeFirst() {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(3);
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        int first=0;
+        Node currentNode = testLink.head;
+        for (int i = 0; i < first; i++) {
+            currentNode = currentNode.nextValue;
+        }
+        testLink.insertBefore(currentNode.value, 99);
+        assertEquals("{99} -> {0} -> {1} -> {2} -> {3} -> NULL", testLink.to_string());
+//        System.out.println(testLink.to_string());
+    }
+    @Test
+    public void testInsertAfterMid() {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(3);
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        Node hed = testLink.head;
+        int count = 0;
+        while (hed != null) {
+            hed = hed.nextValue;
+            count++;
+        }
+        int middleIndex = count / 2;
+
+        Node currentNode = testLink.head;
+        for (int i = 0; i < middleIndex; i++) {
+            currentNode = currentNode.nextValue;
+        }
+
+        testLink.insertAfter(currentNode.value, 99);
+        assertEquals("{0} -> {1} -> {2} -> {99} -> {3} -> NULL", testLink.to_string());
+//        System.out.println(testLink.to_string());
+    }
+
+    @Test
+    public void testInsertAfterLast() {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(3);
+        testLink.insert(2);
+        testLink.insert(1);
+        testLink.insert(0);
+        Node currentNode = testLink.head;
+        while (currentNode.nextValue != null) {
+            currentNode = currentNode.nextValue;
+        }
+        testLink.insertAfter(currentNode.value, 99);
+        assertEquals("{0} -> {1} -> {2} -> {3} -> {99} -> NULL", testLink.to_string());
+//        System.out.println(testLink.to_string());
+    }
+
+
+
 }
+
+
+
+
 
 //1. Write tests to prove the following functionality:
 // that exists Will return false when searching for a value in the linked list that
