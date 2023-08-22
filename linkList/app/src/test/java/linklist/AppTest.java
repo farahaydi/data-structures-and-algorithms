@@ -171,6 +171,19 @@ class AppTest {
 //        System.out.println(testLink.to_string());
     }
 
+    @Test
+    public void testkthFromEnd()
+    {
+        Linkylist testLink = new Linkylist();
+        testLink.insert(5);
+        testLink.insert(15);
+        testLink.insert(25);
+        testLink.insert(35);
+        testLink.insert(45);
+        testLink.insert(55);
+        assertEquals(25, testLink.kthFromEnd(3));
+    }
+
 
 
 }

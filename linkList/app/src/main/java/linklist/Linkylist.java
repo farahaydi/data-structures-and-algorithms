@@ -100,6 +100,25 @@ public class Linkylist {
         }
     }
 
+    public int kthFromEnd(int k) {
+        int length = 0;
+        Node currentNode = head;
+        while (currentNode != null) {
+            length++;
+            currentNode = currentNode.nextValue;
+        }
+        int positionFromStart = length - k;
+        if (positionFromStart < 0) {
+            return -1;
+        }
+        currentNode = head;
+        for (int i = 0; i < positionFromStart; i++) {
+            currentNode = currentNode.nextValue;
+        }
+
+        return currentNode.value;
+    }
+
 }
 
 
