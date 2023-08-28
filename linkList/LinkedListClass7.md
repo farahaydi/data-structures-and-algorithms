@@ -4,7 +4,7 @@ we complete buliding LinkedList in this cc we start bulding new 1 method
 
 
 ## Whiteboard Process
-[linkedList](./Screenshot%20(430).png)
+[linkedList](./Screenshot%20(431).png)
 
 ## Approach & Efficiency
 The provided code implements a kthFromEnd method in the Linkylist class to find the kth value from the end of a linked list. It does so by first calculating the length of the list in one pass and then determining the position of the desired value from the start. It then traverses the list again to reach the calculated position and returns the value at that node. The approach involves two passes, resulting in a time complexity of O(n) and constant space complexity. A more optimized approach using the two-pointer technique could achieve the same goal with a single pass.
@@ -20,36 +20,48 @@ public class Linkylist {
         this.head=null;
     }
     public int kthFromEnd(int k) {
-        int length = 0;
-        Node currentNode = head;
-        while (currentNode != null) {
-            length++;
-            currentNode = currentNode.nextValue;
+        if (head == null || k < 0) {
+            throw new IllegalArgumentException("Invalid input");
         }
-        int positionFromStart = length - k;
-        if (positionFromStart < 0) {
-            return -1;
-        }
-        currentNode = head;
-        for (int i = 0; i < positionFromStart; i++) {
-            currentNode = currentNode.nextValue;
+        int size = 0;
+        Node current = head;
+
+        while (current != null) {
+            size++;
+            current = current.nextValue;
         }
 
-        return currentNode.value;
+        if (k >= size) {
+            throw new NullPointerException("k is equal to or larger than the list size");
+        }
+        Node first = head;
+        Node second = head;
+
+        for (int i = 0; i < k; i++) {
+            if (second == null) {
+                throw new IllegalArgumentException("k is larger than the list size");
+            }
+            second = second.nextValue;
+        }
+
+        while (second.nextValue != null) {
+            first = first.nextValue;
+            second = second.nextValue;
+        }
+
+        return first.value;
     }
 }
 ```
-Linkylist linkedList = new Linkylist();
+Linkylist test = new Linkylist();
 
 // kthFromEnd
-myList.insert(5);
-myList.insert(15);
-myList.insert(25);
-myList.insert(35);
-myList.insert(45);
-myList.insert(55);
-linkedList.kthFromEnd(1)
-==> the output here will be 5
+test.insert(2);
+test.insert(8);
+test.insert(3);
+test.insert(1);
+linkedList.kthFromEnd(2)
+==> the output here will be 3
 
 
 
