@@ -47,7 +47,8 @@ public class App {
         test2.insert(5);
 
         Node zippedList = test1.zipLists(test1, test2);
-        printToString(zippedList);
+        System.out.println("Zipped List: ");
+        System.out.println(printToString(zippedList));
 
         Linkylist l1=new Linkylist();
         Linkylist l2=new Linkylist();
@@ -57,9 +58,7 @@ public class App {
         l2.insert(9);
         l2.insert(5);
         Node zl =l1.zipLists(l1,l2);
-        printToString(zl);
-
-
+        System.out.println(printToString(zl));
 
     }
 }
