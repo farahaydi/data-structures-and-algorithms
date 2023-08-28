@@ -101,22 +101,47 @@ public class Linkylist {
     }
 
     public int kthFromEnd(int k) {
-        int length = 0;
-        Node currentNode = head;
-        while (currentNode != null) {
-            length++;
-            currentNode = currentNode.nextValue;
+        if (head == null || k < 0) {
+            throw new IllegalArgumentException("Invalid input");
         }
-        int positionFromStart = length - k;
-        if (positionFromStart < 0) {
-            return -1;
-        }
-        currentNode = head;
-        for (int i = 0; i < positionFromStart; i++) {
-            currentNode = currentNode.nextValue;
+        int size = 0;
+        Node current = head;
+
+        while (current != null) {
+            size++;
+            current = current.nextValue;
         }
 
-        return currentNode.value;
+        if (k >= size) {
+            throw new NullPointerException("k is equal to or larger than the list size");
+        }
+        Node first = head;
+        Node second = head;
+
+        for (int i = 0; i < k; i++) {
+            if (second == null) {
+                throw new IllegalArgumentException("k is larger than the list size");
+            }
+            second = second.nextValue;
+        }
+
+        while (second.nextValue != null) {
+            first = first.nextValue;
+            second = second.nextValue;
+        }
+
+        return first.value;
+    }
+
+    public String toString() {
+        String result = "";
+        Node current = head;
+        while (current != null) {
+            result += "{ " + current.value + " } -> ";
+            current = current.nextValue;
+        }
+        result += "NULL";
+        return result;
     }
 
 }

@@ -175,13 +175,12 @@ class AppTest {
     public void testkthFromEnd()
     {
         Linkylist testLink = new Linkylist();
-        testLink.insert(5);
-        testLink.insert(15);
-        testLink.insert(25);
-        testLink.insert(35);
-        testLink.insert(45);
-        testLink.insert(55);
-        assertEquals(25, testLink.kthFromEnd(3));
+        testLink.insert(2);
+        testLink.insert(8);
+        testLink.insert(3);
+        testLink.insert(1);
+        int k=0;
+        assertEquals(2, testLink.kthFromEnd(k));
     }
 
 
