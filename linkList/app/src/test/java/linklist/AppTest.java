@@ -5,8 +5,8 @@ package linklist;
 
 import org.junit.jupiter.api.Test;
 
+import static linklist.Linkylist.printToString;
 import static org.junit.jupiter.api.Assertions.*;
-
 class AppTest {
     @Test
     public void testInsert() {
@@ -181,6 +181,21 @@ class AppTest {
         testLink.insert(1);
         int k=0;
         assertEquals(2, testLink.kthFromEnd(k));
+    }
+
+    @Test
+    public void testZippedLists()
+    {
+        Linkylist link01 =new Linkylist();
+        Linkylist linky02 =new Linkylist();
+        link01.insert(2);
+        link01.insert(3);
+        link01.insert(1);
+        linky02.insert(4);
+        linky02.insert(9);
+        linky02.insert(5);
+        Node testZippedlist=link01.zipLists(link01,linky02);
+        assertEquals("1 -> 5 -> 3 -> 9 -> 2 -> 4 -> null",  printToString(testZippedlist));
     }
 
 

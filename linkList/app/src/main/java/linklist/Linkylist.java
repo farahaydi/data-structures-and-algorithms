@@ -144,6 +144,36 @@ public class Linkylist {
         return result;
     }
 
+public Node zipLists(Linkylist linky1, Linkylist linky2) {
+    Node firstNode = linky1.head;
+    Node secondNode = linky2.head;
+    Node zippedNode = new Node(-1);
+    Node current = zippedNode;
+    while (firstNode != null && secondNode != null) {
+        Node next1 = firstNode.nextValue;
+        Node next2 = secondNode.nextValue;
+        current.nextValue = firstNode;
+        current = current.nextValue;
+        current.nextValue = secondNode;
+        current = current.nextValue;
+        firstNode = next1;
+        secondNode = next2;
+    }
+    if (firstNode != null) {
+        current.nextValue = firstNode;
+    } else {
+        current.nextValue = secondNode;
+    }
+    return zippedNode.nextValue;
+}
+
+    public static String printToString(Node current) {
+        if (current == null) {
+            return "null";
+        }
+        return current.value + " -> " + printToString(current.nextValue);
+    }
+
 }
 
 
