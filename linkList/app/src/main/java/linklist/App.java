@@ -19,11 +19,19 @@ public class App {
         System.out.println(myList.includes(2));
 
 
-        int kthValue = myList.kthFromEnd(1);
-        if (kthValue != -1) {
-            System.out.println(kthValue);
-        } else {
-            System.out.println("Invalid k value or linked list is too short.");
+        Linkylist test=new Linkylist();
+        test.insert(2);
+        test.insert(8);
+        test.insert(3);
+        test.insert(1);
+        System.out.println("test = "+ test.to_string());
+
+        try {
+            System.out.println("Value =  " + test.kthFromEnd(6));
+        } catch (IllegalArgumentException e) {
+            System.out.println( e.getMessage());
+        }catch (NullPointerException e) {
+            System.out.println( e.getMessage());
         }
     }
 }
