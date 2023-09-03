@@ -24,12 +24,34 @@ public class LinkedQueue {
         {
             tail=newItem;
             head=newItem;
+            length++;
+
         }
         else
         {
             tail.next=newItem;
             tail=tail.next;
+            length++;
+
         }
-        length++;
     }
+    public int dequeue()
+    {
+        if (isEmpty()) {
+            throw new IllegalArgumentException("Queue Is Empty");
+        }
+        int x=head.item;
+        head=head.next;
+        length--;
+        return x;
+    }
+    public int peek()
+    {
+        if(isEmpty())
+        {
+            throw new IllegalArgumentException("Stack Is Empty");
+        }
+        return head.item;
+    }
+
 }

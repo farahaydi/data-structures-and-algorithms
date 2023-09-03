@@ -23,7 +23,6 @@ public class LinckedStack {
         this.top = newItem;
         length++;
     }
-
     public int pop() {
         if (isEmpty()) {
             throw new IllegalArgumentException("Stack Is Empty");
@@ -40,7 +39,4 @@ public class LinckedStack {
         }
         return top.item;
     }
-
-
-
 }
