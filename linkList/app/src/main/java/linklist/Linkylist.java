@@ -174,7 +174,44 @@ public Node zipLists(Linkylist linky1, Linkylist linky2) {
         return current.value + " -> " + printToString(current.nextValue);
     }
 
-}
+    public boolean isPalindrome() {
+        if (head == null || head.nextValue == null) {
+            return true;
+        }
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.nextValue != null) {
+            slow = slow.nextValue;
+            fast = fast.nextValue.nextValue;
+        }
+        Node secondHalf = reverseLinkedList(slow);
+        Node firstHalf = head;
+        while (secondHalf != null) {
+            if (firstHalf.value != secondHalf.value) {
+                return false;
+            }
+            firstHalf = firstHalf.nextValue;
+            secondHalf = secondHalf.nextValue;
+        }
+
+        return true;
+    }
+
+    private Node reverseLinkedList(Node head) {
+        Node prev = null;
+        Node current = head;
+        while (current != null) {
+            Node next = current.nextValue;
+            current.nextValue = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+
+
+    }
 
 
 

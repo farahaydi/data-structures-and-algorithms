@@ -60,5 +60,31 @@ public class App {
         Node zl =l1.zipLists(l1,l2);
         System.out.println(printToString(zl));
 
+        System.out.println("************************************************************");
+        Linkylist list1 = new Linkylist();
+        list1.insert('t');
+        list1.insert('a');
+        list1.insert('c');
+        list1.insert('o');
+        list1.insert('c');
+        list1.insert('a');
+        list1.insert('t');
+        System.out.println("Example 1: " + list1.isPalindrome());
+
+        Linkylist list2 = new Linkylist();
+        list2.insert('m');
+        list2.insert('o');
+        list2.insert('o');
+        list2.insert('m');
+        System.out.println("Example 2: " + list2.isPalindrome());
+
+        Linkylist list3 = new Linkylist();
+        list3.insert('h');
+        list3.insert('o');
+        list3.insert('u');
+        list3.insert('s');
+        list3.insert('e');
+        System.out.println("Example 3: " + list3.isPalindrome());
+
     }
 }
