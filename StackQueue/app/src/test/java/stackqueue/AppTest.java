@@ -36,6 +36,12 @@ class AppTest {
        int peekElement=lstest.peek();
        assertEquals(6,peekElement);
    }
+    @Test
+    public void testEmptyStack() {
+        LinckedStack lstest = new LinckedStack();
+
+        assertThrows(IllegalArgumentException.class, () -> {lstest.pop();});
+    }
    @Test
     public void testQueueEnqueue()
    {
@@ -64,5 +70,36 @@ class AppTest {
        lntest.enqueue(5);
        int peekElement=lntest.peek();
        assertEquals(1,peekElement);
+   }
+   @Test
+    public void testEmptyQueue()
+   {
+       LinkedQueue lntest =new LinkedQueue();
+      assertThrows(IllegalArgumentException.class,()->{lntest.dequeue();});
+   }
+
+   @Test
+    public void testPseudoQueueEnqueue()
+   {
+       PseudoQueue pseudoQueue = new PseudoQueue();
+       pseudoQueue.enqueue(1);
+       pseudoQueue.enqueue(2);
+       pseudoQueue.enqueue(3);
+       assertEquals(3,pseudoQueue.length);
+   }
+   @Test
+    public void testPseudoQueueDequeue()
+   {
+       PseudoQueue pseudoQueue = new PseudoQueue();
+       pseudoQueue.enqueue(1);
+       pseudoQueue.enqueue(2);
+       pseudoQueue.enqueue(3);
+       assertEquals(3,pseudoQueue.dequeue());
+   }
+   @Test
+    public void testPseudoQueueEmptyDequeue()
+   {
+       PseudoQueue pseudoQueue = new PseudoQueue();
+       assertThrows(IllegalArgumentException.class,()->{pseudoQueue.dequeue();});
    }
 }
