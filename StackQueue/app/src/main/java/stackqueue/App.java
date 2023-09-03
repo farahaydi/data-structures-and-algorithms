@@ -24,6 +24,18 @@ public class App {
         System.out.println(lq.length);
         System.out.println(lq.peek());
 
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(2);
+        pseudoQueue.enqueue(3);
+        pseudoQueue.enqueue(4);
+        System.out.println(pseudoQueue.length);
+        System.out.println(pseudoQueue.dequeue());
+        System.out.println(pseudoQueue.dequeue());
+
+
 
     }
 }
