@@ -27,15 +27,19 @@ public class App {
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
         PseudoQueue pseudoQueue = new PseudoQueue();
-        pseudoQueue.enqueue(1);
-        pseudoQueue.enqueue(2);
-        pseudoQueue.enqueue(3);
-        pseudoQueue.enqueue(4);
-        System.out.println(pseudoQueue.length);
-        System.out.println(pseudoQueue.dequeue());
-        System.out.println(pseudoQueue.dequeue());
+        pseudoQueue.enqueue(20);
+        pseudoQueue.enqueue(15);
+        pseudoQueue.enqueue(10);
+        pseudoQueue.enqueue(5);
+//        pseudoQueue.enqueue(5);
+//        pseudoQueue.enqueue(6);
 
+//        System.out.println(pseudoQueue.length);
+//        System.out.println(pseudoQueue.dequeue());
+//        System.out.println(pseudoQueue.dequeue());
+        System.out.println(pseudoQueue.toString());
 
+//Queue
 
     }
 }
