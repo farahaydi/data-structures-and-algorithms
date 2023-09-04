@@ -4,7 +4,7 @@ It allows for adding elements to the end of the queue and extracting elements fr
 This efficient structure maintains the queue behavior using two stacks.
 
 ## Whiteboard Process
-[PseduQueue](./Screenshot%20(446).png)
+[PseduQueue](./Screenshot%20(447).png)
 
 ## Approach & Efficiency
 Enqueue Operation:
@@ -33,10 +33,15 @@ public class PseudoQueue {
     //enqueue
     //Arguments: value
     //Inserts a value into the PseudoQueue, using a first-in, first-out approach.
-    public void enqueue(int value)
-    {
-        Node newValue = new Node(value);
-        FistStack.push(newValue.item);
+     public void enqueue(int value) {
+        Node newNode = new Node(value); //20-15
+        while (!FistStack.isEmpty()) {
+            SecondStack.push(FistStack.pop()); //Second ->20
+        }
+        FistStack.push(newNode.item); //First -> 15-20
+        while (!SecondStack.isEmpty()) {
+            FistStack.push(SecondStack.pop());
+        }
         length++;
     }
     //dequeue
