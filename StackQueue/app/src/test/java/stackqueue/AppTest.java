@@ -102,4 +102,34 @@ class AppTest {
        PseudoQueue pseudoQueue = new PseudoQueue();
        assertThrows(IllegalArgumentException.class,()->{pseudoQueue.dequeue();});
    }
+
+    @Test
+    void testEnqueueAndDequeue() {
+        AnimalShelter shelter = new AnimalShelter();
+
+        shelter.enqueue(new Animal("dog", "Buddy"));
+        shelter.enqueue(new Animal("cat", "Whiskers"));
+        shelter.enqueue(new Animal("dog", "Rex"));
+        shelter.enqueue(new Animal("cat", "Mittens"));
+        Animal adoptedDog = shelter.dequeue("dog");
+        assertNotNull(adoptedDog);
+        assertEquals("Buddy", adoptedDog.getName());
+
+        Animal adoptedCat = shelter.dequeue("cat");
+        assertNotNull(adoptedCat);
+        assertEquals("Whiskers", adoptedCat.getName());
+
+        Animal invalidAnimal = shelter.dequeue("rabbit");
+        assertNull(invalidAnimal);
+    }
+    @Test
+    void testEmptyShelter() {
+        AnimalShelter shelter = new AnimalShelter();
+
+        Animal adoptedDog = shelter.dequeue("dog");
+        assertNull(adoptedDog);
+
+        Animal adoptedCat = shelter.dequeue("cat");
+        assertNull(adoptedCat);
+    }
 }
