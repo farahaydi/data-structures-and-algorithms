@@ -41,5 +41,33 @@ public class App {
 
 //Queue
 
+
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        AnimalShelter shelter = new AnimalShelter();
+
+        shelter.enqueue(new Animal("dog", "Buddy"));
+        shelter.enqueue(new Animal("cat", "Whiskers"));
+        shelter.enqueue(new Animal("dog", "Rex"));
+        shelter.enqueue(new Animal("cat", "Mittens"));
+        Animal adoptedDog = shelter.dequeue("dog");
+        if (adoptedDog != null) {
+            System.out.println("Adopted Dog: " + adoptedDog.getName());
+        } else {
+            System.out.println("No dogs available for adoption.");
+        }
+
+        Animal adoptedCat = shelter.dequeue("cat");
+        if (adoptedCat != null) {
+            System.out.println("Adopted Cat: " + adoptedCat.getName());
+        } else {
+            System.out.println("No cats available for adoption.");
+        }
+        Animal invalidAnimal = shelter.dequeue("rabbit");
+        if (invalidAnimal != null) {
+            System.out.println("Adopted Animal: " + invalidAnimal.getName());
+        } else {
+            System.out.println("Invalid preference. No animal adopted.");
+        }
+
     }
 }
