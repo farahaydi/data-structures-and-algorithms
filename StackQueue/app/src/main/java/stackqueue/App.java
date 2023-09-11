@@ -1,6 +1,8 @@
 
 package stackqueue;
 
+import static stackqueue.BracketValidator.validateBrackets;
+
 public class App {
     public static void main(String[] args) {
         LinckedStack Ls =new LinckedStack();
@@ -68,6 +70,20 @@ public class App {
         } else {
             System.out.println("Invalid preference. No animal adopted.");
         }
+
+
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+
+        System.out.println(validateBrackets("{}"));
+        System.out.println(validateBrackets("{}(){}"));
+        System.out.println(validateBrackets("()[[Extra Characters]]"));
+        System.out.println(validateBrackets("(){}[[]]"));
+        System.out.println(validateBrackets("{}{Code}[Fellows](())"));
+        System.out.println(validateBrackets("[({}]"));
+        System.out.println(validateBrackets("(]("));
+        System.out.println(validateBrackets("{(})"));
 
     }
 }
