@@ -39,4 +39,5 @@ public class LinckedStack {
         }
         return top.item;
     }
+
 }
