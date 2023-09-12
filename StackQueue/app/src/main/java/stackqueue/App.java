@@ -10,6 +10,8 @@ public class App {
         Ls.push(3);
         Ls.push(8);
         Ls.push(8);
+        Ls.push(10);
+
         System.out.println(Ls.pop());
         System.out.println(Ls.peek());
 
@@ -28,6 +30,7 @@ public class App {
 
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
+        System.out.println("psedoooo");
         PseudoQueue pseudoQueue = new PseudoQueue();
         pseudoQueue.enqueue(20);
         pseudoQueue.enqueue(15);
@@ -84,6 +87,20 @@ public class App {
         System.out.println(validateBrackets("[({}]"));
         System.out.println(validateBrackets("(]("));
         System.out.println(validateBrackets("{(})"));
+
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+        LinckedStack stack = new LinckedStack();
+        stack.push(5);
+        stack.push(8);
+        stack.push(3);
+        stack.push(12);
+        stack.push(7);
+
+        int max = stack.getMax();
+
+        System.out.println("The maximum value in the stack is: " + max);
 
     }
 }
