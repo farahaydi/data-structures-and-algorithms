@@ -132,4 +132,5 @@ class AppTest {
         Animal adoptedCat = shelter.dequeue("cat");
         assertNull(adoptedCat);
     }
+
 }

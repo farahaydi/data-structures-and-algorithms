@@ -4,7 +4,7 @@ It allows for adding elements to the end of the queue and extracting elements fr
 This efficient structure maintains the queue behavior using two stacks.
 
 ## Whiteboard Process
-[PseduQueue](./Screenshot%20(447).png)
+[PseduQueue](./img.png)
 
 ## Approach & Efficiency
 Enqueue Operation:
