@@ -13,8 +13,11 @@ public class App {
             tree.add(8);
             tree.add(1);
             tree.add(4);
+            tree.add(15);
 
         System.out.println("Contains 4: " + tree.contains(4));
         System.out.println("Contains 6: " + tree.contains(6));
+        int max = tree.findMax();
+        System.out.println("Maximum value in the tree: " + max);
     }
 }
