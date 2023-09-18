@@ -51,5 +51,28 @@ public class BinaryTree {
         }
         return result;
     }
+    public int findMax() {
+        return findMaxRecursive(root);
+    }
+
+    private int findMaxRecursive(Node node) {
+        if (node == null) {
+            return Integer.MIN_VALUE;
+        }
+
+        int max = node.value;
+        int leftMax = findMaxRecursive(node.left);
+        int rightMax = findMaxRecursive(node.right);
+
+        if (leftMax > max) {
+            max = leftMax;
+        }
+
+        if (rightMax > max) {
+            max = rightMax;
+        }
+
+        return max;
+    }
 }
 
