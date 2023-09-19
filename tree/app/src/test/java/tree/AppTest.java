@@ -62,4 +62,39 @@ class AppTest {
         List<Integer> postOrderResult = tree.postOrderTraversal(tree.root);
         assertEquals(List.of(4, 5, 2, 3, 1), postOrderResult);
     }
+    @Test
+    public void testFindMaxRecursive() {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(5);
+        tree.add(3);
+        tree.add(8);
+        tree.add(1);
+        tree.add(4);
+        tree.add(15);
+
+        int max = tree.findMax();
+
+        assertEquals(15, max);
+    }
+    @Test
+    public void testBreadthFirst() {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(5);
+        tree.add(3);
+        tree.add(8);
+        tree.add(1);
+        tree.add(4);
+        tree.add(15);
+
+        List<Integer> result = tree.breadthFirst();
+
+        assertEquals(6, result.size());
+
+       assertEquals(Integer.valueOf(5), result.get(0));
+        assertEquals(Integer.valueOf(3), result.get(1));
+        assertEquals(Integer.valueOf(8), result.get(2));
+        assertEquals(Integer.valueOf(1), result.get(3));
+        assertEquals(Integer.valueOf(4), result.get(4));
+        assertEquals(Integer.valueOf(15), result.get(5));
+    }
 }

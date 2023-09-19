@@ -10,4 +10,5 @@
  | LinkedList2      | [Java07](./src/main/java/linklist/Linkylist.java)           | [ReadME07](linkList/LinkedListClass7.md)      | 
 | LinkedList3      | [Java08](./src/main/java/linklist/Linkylist.java)           | [ReadME08](linkList/LinkedlistChallenge08.md) |
 | Tree01           | [Java15](./src/main/java/linklist/Linkylist.java)           | [ReadME15](tree/ReadMeTree.md)                |
-| Tree02           | [Java16](tree/app/src/main/java/tree/BinarySearchTree.java) | [ReadME16](tree/ReadMeMaxTree.md)                |
+| Tree02           | [Java16](tree/app/src/main/java/tree/BinarySearchTree.java) | [ReadME16](tree/ReadMeMaxTree.md)             |
+| Tree03           | [Java17](tree/app/src/main/java/tree/BinarySearchTree.java) | [ReadME17](tree/ReadMeBreadth.md)             |
