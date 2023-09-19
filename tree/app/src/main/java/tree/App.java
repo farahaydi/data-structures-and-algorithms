@@ -3,10 +3,22 @@
  */
 package tree;
 
+import java.util.List;
+
 public class App {
 
     public static void main(String[] args) {
             BinarySearchTree tree = new BinarySearchTree();
+        BinarySearchTree tree2 = new BinarySearchTree();
+
+        tree2.add(7);
+        tree2.add(9);
+        tree2.add(1);
+        tree2.add(32);
+        tree2.add(48);
+        tree2.add(0);
+        List<Integer> result2 = tree2.breadthFirst();
+        System.out.println("tree2"+result2);
 
             tree.add(5);
             tree.add(3);
@@ -19,5 +31,7 @@ public class App {
         System.out.println("Contains 6: " + tree.contains(6));
         int max = tree.findMax();
         System.out.println("Maximum value in the tree: " + max);
+        List<Integer> result = tree.breadthFirst();
+        System.out.println(result);
     }
 }
