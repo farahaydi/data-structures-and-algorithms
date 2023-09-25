@@ -33,5 +33,18 @@ public class App {
         System.out.println("Maximum value in the tree: " + max);
         List<Integer> result = tree.breadthFirst();
         System.out.println(result);
+
+        System.out.println("**********************************************************");
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.add(3);
+        bst.add(5);
+        bst.add(15);
+        bst.add(7);
+        BinaryTree.FizzBuzzNode fizzBuzzRoot = bst.fizzBuzzTree(bst.root);
+        List<String> preOrderResult = bst.preOrderTraversal(fizzBuzzRoot);
+        for (String value : preOrderResult) {
+            System.out.println(value);
+        }
     }
-}
+    }
+
