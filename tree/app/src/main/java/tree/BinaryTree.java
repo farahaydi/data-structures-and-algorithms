@@ -4,9 +4,25 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
 public class BinaryTree {
-    Node root;
+    FizzBuzzNode root;
+
+    public static class FizzBuzzNode extends Node {
+        String value;
+
+        public FizzBuzzNode(String value) {
+            super(0);
+            this.value = value;
+        }
+
+        public String getValue() {
+            return this.value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
 
     public static class Node {
         int value;
@@ -18,18 +34,22 @@ public class BinaryTree {
             this.left = null;
             this.right = null;
         }
+
+        public String getValue() {
+            return String.valueOf(this.value);
+        }
     }
 
     public BinaryTree() {
         this.root = null;
     }
 
-    public List<Integer> preOrderTraversal(Node node) {
-        List<Integer> result = new ArrayList<>();
+    public List<String> preOrderTraversal(FizzBuzzNode node) {
+        List<String> result = new ArrayList<>();
         if (node != null) {
-            result.add(node.value);
-            result.addAll(preOrderTraversal(node.left));
-            result.addAll(preOrderTraversal(node.right));
+            result.add(node.getValue());
+            result.addAll(preOrderTraversal((FizzBuzzNode) node.left));
+            result.addAll(preOrderTraversal((FizzBuzzNode) node.right));
         }
         return result;
     }
@@ -53,6 +73,7 @@ public class BinaryTree {
         }
         return result;
     }
+
     public int findMax() {
         return findMaxRecursive(root);
     }
@@ -76,29 +97,29 @@ public class BinaryTree {
 
         return max;
     }
+
     public List<Integer> breadthFirst() {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<FizzBuzzNode> queue = new LinkedList<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-            Node node = queue.poll();
-            result.add(node.value);
+            FizzBuzzNode node = queue.poll();
+            result.add(Integer.parseInt(node.value));
 
             if (node.left != null) {
-                queue.offer(node.left);
+                queue.offer((FizzBuzzNode) node.left);
             }
 
             if (node.right != null) {
-                queue.offer(node.right);
+                queue.offer((FizzBuzzNode) node.right);
             }
         }
 
         return result;
     }
 }
-
