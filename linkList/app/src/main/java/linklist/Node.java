@@ -1,11 +1,11 @@
 package linklist;
 
 public class Node {
-    public int value;
-    public linklist.Node nextValue;
-    public Node(int value)
+    int item;
+    Node next;
+    public Node(int item)
     {
-        this.value = value;
-        this.nextValue=null;
+        this.item=item;
+        this.next=null;
     }
 }
