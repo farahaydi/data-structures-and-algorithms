@@ -50,7 +50,7 @@ n2 = right - mid
            k++
 
 # Trace 
-![tracMerge](./Screenshot%202023-10-18%20194106.png)
+![tracMerge](./Screenshot%202023-10-18%20203721.png)
 
 # Efficency
 Time Complexity: O(n log n)
