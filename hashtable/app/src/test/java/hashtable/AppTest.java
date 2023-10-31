@@ -58,5 +58,26 @@ class AppTest {
             assertTrue(hashedIndex >= 0 && hashedIndex < 10, "Hashed index for key " + key + " is out of range.");
         }
     }
+
+
+    @Test
+    public void testFindFirstRepeatedWord() {
+        Hashtable hashtable = new Hashtable(10);
+
+        String input = "Once upon a time, there was a brave princess who once...";
+        String repeatedWord = hashtable.findFirstRepeatedWord(input);
+
+        assertEquals("a", repeatedWord);
+    }
+
+    @Test
+    public void testCaseInsensitive() {
+        Hashtable hashtable = new Hashtable(10);
+
+        String input = "Once upon A time, there was a brave Princess who once...";
+        String repeatedWord = hashtable.findFirstRepeatedWord(input);
+
+        assertEquals("a", repeatedWord);
+    }
 }
 
