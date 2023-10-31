@@ -1,5 +1,6 @@
 package hashtable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -66,4 +67,19 @@ public class Hashtable {
 
         return keys;
     }
+
+    public String findFirstRepeatedWord(String input) {
+        String[] words = input.split("\\W+");
+        for (String word : words) {
+            word = word.toLowerCase();
+
+            if (this.has(word)) {
+                return word;
+            }
+            this.set(word, "dummy");
+        }
+
+        return null;
+    }
+
 }
