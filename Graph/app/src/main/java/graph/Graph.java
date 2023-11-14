@@ -62,4 +62,32 @@ public class Graph {
                     '}';
         }
     }
+    public Collection<Object> breadthFirst(Object startNode) {
+        if (!vertices.containsKey(startNode)) {
+            System.out.println("Start node not found in the graph.");
+            return Collections.emptyList();
+        }
+
+        Set<Object> visited = new HashSet<>();
+        List<Object> result = new ArrayList<>();
+        Queue<Object> queue = new LinkedList<>();
+
+        queue.add(startNode);
+        visited.add(startNode);
+
+        while (!queue.isEmpty()) {
+            Object current = queue.poll();
+            result.add(current);
+
+            for (Edge neighbor : vertices.get(current)) {
+                if (!visited.contains(neighbor.getVertex())) {
+                    queue.add(neighbor.getVertex());
+                    visited.add(neighbor.getVertex());
+                }
+            }
+        }
+
+        System.out.println("Breadth-first traversal result: " + result);
+        return result;
+    }
 }
