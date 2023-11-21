@@ -90,4 +90,33 @@ public class Graph {
         System.out.println("Breadth-first traversal result: " + result);
         return result;
     }
+
+    public Integer businessTrip(String[] cities) {
+        int totalCost = 0;
+
+        for (int i = 0; i < cities.length - 1; i++) {
+            String currentCity = cities[i];
+            String nextCity = cities[i + 1];
+
+            if (!vertices.containsKey(currentCity) || !vertices.containsKey(nextCity)) {
+                return null;
+            }
+
+            boolean directFlightExists = false;
+            for (Edge neighbor : vertices.get(currentCity)) {
+                if (neighbor.getVertex().equals(nextCity)) {
+                    directFlightExists = true;
+                    totalCost += neighbor.getWeight();
+                    break;
+                }
+            }
+
+            if (!directFlightExists) {
+                return null;
+            }
+        }
+
+        return totalCost;
+    }
+
 }
