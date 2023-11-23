@@ -66,8 +66,29 @@ public class App {
         String[] trip4 = {"Narnia", "Arendelle", "Naboo"};
         Integer cost4 = graph.businessTrip(trip4);
         System.out.println("Input: " + Arrays.toString(trip4) + "\tOutput: $" + cost4);
-    }
 
 
-    }
+    Graph graphx = new Graph();
+
+    // Adding vertices
+        graphx.addVertex("A");
+        graphx.addVertex("B");
+        graphx.addVertex("C");
+        graphx.addVertex("D");
+        graphx.addVertex("E");
+        graphx.addVertex("F");
+        graphx.addVertex("G");
+        graphx.addVertex("H");
+
+        graphx.addEdge("A", "B", 1);
+        graphx.addEdge("A", "C", 1);
+        graphx.addEdge("B", "D", 1);
+        graphx.addEdge("C", "G", 1);
+        graphx.addEdge("D", "E", 1);
+        graphx.addEdge("E", "H", 1);
+        graphx.addEdge("E", "F", 1);
+
+        graphx.depthFirst("A");
+}
+}
 
